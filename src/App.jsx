@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
@@ -7,7 +8,7 @@ import Contact from "./pages/Contact";
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-100 text-gray-900">
+    <div className="min-h-screen text-gray-100">
       <Navbar />
       <main>
         <Home />
@@ -15,6 +16,7 @@ function App() {
         <Projects />
         <Contact />
       </main>
+      <Footer />
     </div>
   );
 }

@@ -1,69 +1,95 @@
 import React from "react";
+import { FiMail, FiDownload } from "react-icons/fi";
+import { motion } from "framer-motion";
 
 const Home = () => {
   return (
-    <section
-      id="home"
-      className="w-full bg-zinc-900  text-white  flex flex-col md:flex-row items-center gap-8 px-6 py-24  m-0 mt-6"
-    >
-      {/* Image */}
-      <div className="flex justify-center md:justify-start w-full md:w-auto">
-        <img
-          src="/Profile_Image.jpg"
-          alt="Sai kiran"
-          className="w-48 h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-blue-400 shadow-lg transition-transform duration-300 hover:scale-105"
-        />
-      </div>
+    <section id="home" className="min-h-screen flex items-center justify-center px-6 pt-20">
+      <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
-      {/* Text Content */}
-      <div className="flex-1 px-4 md:px-8">
-        <h3 className="text-xl text-blue-400 mb-2">Hello, I'm</h3>
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">Muyyala Sai Kiran</h1>
-        <h2 className="text-2xl md:text-3xl font-semibold mb-6">
-          A <span className="text-blue-400">Full Stack Developer</span>{" "}
-          passionate about building digital solutions
-        </h2>
+        {/* Text Content */}
+        <div className="order-2 md:order-1 text-center md:text-left">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-blue-400 font-medium text-lg mb-2"
+          >
+            Hello, I'm
+          </motion.p>
 
-        <div className="space-y-4 text-lg">
-          <p>
-            Computer Science graduate specializing in{" "}
-            <span className="text-blue-400 font-medium">
-              React.js,MERN stack and full-stack development
-            </span>
-            . I transform complex problems into elegant, efficient solutions
-            through clean code and innovative thinking.
-          </p>
-          <p>
-            With experience in both{" "}
-            <span className="text-blue-400 font-medium">
-              frontend and backend technologies
-            </span>
-            , I bridge the gap between user experience and technical
-            implementation. My projects demonstrate strong problem-solving
-            skills and attention to detail.
-          </p>
-          <p>
-            Currently seeking opportunities to contribute my skills to
-            meaningful projects while continuing to grow as a developer in a
-            collaborative environment.
-          </p>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-5xl md:text-7xl font-bold mb-4"
+          >
+            <span className="text-gradient">Muyyala Sai Kiran</span>
+          </motion.h1>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-2xl md:text-3xl font-semibold text-white mb-6"
+          >
+            Full Stack Developer
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="text-gray-400 text-lg mb-8 leading-relaxed max-w-lg mx-auto md:mx-0"
+          >
+            Passionate about building scalable digital solutions. Specialized in React.js, Node.js, and modern web architecture.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="flex flex-wrap justify-center md:justify-start gap-4"
+          >
+            <a
+              href="#contact"
+              className="bg-gradient-primary text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:shadow-purple-500/30 transition-all flex items-center gap-2"
+            >
+              Contact Me <FiMail />
+            </a>
+            <a
+              href="/Muyyala_Saikiran_Resume.pdf"
+              download
+              className="border border-purple-500 text-purple-400 font-bold py-3 px-8 rounded-lg hover:bg-purple-500/10 transition-all flex items-center gap-2"
+            >
+              Download CV <FiDownload />
+            </a>
+          </motion.div>
+
+          {/* Social Icons Placeholder in Reference Style */}
+          <div className="mt-8 flex justify-center md:justify-start gap-4">
+            {/* Icons would go here */}
+          </div>
         </div>
 
-        <div className="mt-8 flex space-x-4">
-          <a
-            href="#contact"
-            className="bg-blue-400 hover:bg-blue-500 text-zinc-900 font-bold py-3 px-6 rounded-lg transition-colors duration-300"
-          >
-            Contact Me
-          </a>
-          <a
-            href="/Muyyala_Saikiran_Resume.pdf"
-            download
-            className="border-2 border-blue-400 hover:bg-blue-400 hover:text-zinc-900 text-blue-400 font-bold py-3 px-6 rounded-lg transition-colors duration-300"
-          >
-            Download CV
-          </a>
-        </div>
+        {/* Profile Image with Glow */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          className="order-1 md:order-2 flex justify-center"
+        >
+          <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full p-2 bg-gradient-to-r from-purple-500 to-blue-500 profile-glow">
+            <div className="w-full h-full rounded-full overflow-hidden bg-[#0f0c29]">
+              <img
+                src="/Profile_Image.jpg"
+                alt="Sai Kiran"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </motion.div>
+
       </div>
     </section>
   );

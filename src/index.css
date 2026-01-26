@@ -1,13 +1,66 @@
 @import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-html{
-    height: 100vh;
-    width: 100vw;
+:root {
+    --bg-dark: #0f0c29;
+    --bg-card: #1c1a2e;
+    --primary-gradient: linear-gradient(90deg, #a855f7 0%, #3b82f6 100%);
+    --text-gradient: linear-gradient(90deg, #9f7aea 0%, #63b3ed 100%);
 }
-body{
-    height: 100%;
-    width: 100%;
-    background-color: black;
-    color: white;
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-dark);
+    color: #E2E8F0;
     overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Utilities */
+.text-gradient {
+    background: var(--text-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.bg-gradient-primary {
+    background: var(--primary-gradient);
+}
+
+.profile-glow {
+    box-shadow: 0 0 60px -10px rgba(139, 92, 246, 0.5);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4b5563;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
 }

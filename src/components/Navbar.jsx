@@ -1,33 +1,76 @@
-import React from "react";
+import React, { useState } from "react";
+import { FiMenu, FiX } from "react-icons/fi";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const navLinks = [
+    { name: "Home", href: "#home" },
+    { name: "About", href: "#about" },
+    { name: "Projects", href: "#projects" },
+    { name: "Contact", href: "#contact" },
+  ];
+
   return (
-    <div className="fixed top-0 left-0 w-full bg-zinc-900/90 z-50 backdrop-blur-md shadow-lg">
-      <div className="flex justify-between items-center px-8 py-4">
-        {/* Logo or Name */}
-        <div className="text-white text-xl font-bold">
-          Sai Kiran <span className="text-blue-400">Muyyala</span>
+    <nav className="fixed top-0 left-0 w-full z-50 bg-[#0f0c29]/90 backdrop-blur-sm border-b border-white/5">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        {/* Logo */}
+        <div className="text-2xl font-bold tracking-tight">
+          <span className="text-gradient">Muyyala Saikiran</span>
         </div>
 
-        {/* Navigation Links */}
-        <ul className="flex space-x-8 text-white">
-          {["home", "about", "projects", "contact"].map((item) => (
-            <li key={item}>
+        {/* Desktop Menu */}
+        <ul className="hidden md:flex space-x-8">
+          {navLinks.map((item) => (
+            <li key={item.name}>
               <a
-                href={`#${item}`}
-                className="relative cursor-pointer text-gray-300 hover:text-blue-400
-                           before:absolute before:-bottom-1 before:left-0 
-                           before:w-0 before:h-[2px] before:bg-blue-400 
-                           before:transition-[width] before:duration-300 
-                           hover:before:w-full transition-colors duration-200"
+                href={item.href}
+                className="text-gray-300 hover:text-white hover:text-gradient transition-all font-medium"
               >
-                {item.charAt(0).toUpperCase() + item.slice(1)}
+                {item.name}
               </a>
             </li>
           ))}
         </ul>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-white focus:outline-none"
+          >
+            {isOpen ? <FiX size={28} /> : <FiMenu size={28} />}
+          </button>
+        </div>
       </div>
-    </div>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-[#1c1a2e] border-t border-white/10"
+          >
+            <ul className="flex flex-col p-6 space-y-4">
+              {navLinks.map((item) => (
+                <li key={item.name}>
+                  <a
+                    href={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className="block text-gray-300 hover:text-white font-medium"
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </nav>
   );
 };
 

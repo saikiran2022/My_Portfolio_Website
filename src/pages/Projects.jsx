@@ -4,6 +4,14 @@ import { FiExternalLink, FiGithub } from "react-icons/fi";
 const Projects = () => {
   const projects = [
     {
+      title: "Full-Stack Restaurant Management Dashboard",
+      category: "Full Stack",
+      image: "/restaurant_admin_dashboard_v2.png",
+      description: "A high-performance full-stack dashboard designed to streamline operations with real-time analytics, secure authentication, and a premium dynamic UI for actionable insights.",
+      tech: ["React 19", "Tailwind CSS v4", "Framer Motion", "Recharts", "Node.js", "Express.js", "MongoDB"],
+      links: { demo: "#", code: "#" }
+    },
+    {
       title: "Personal Portfolio",
       category: "Web Design",
       image: "/portfolio_photo.png",
@@ -19,14 +27,7 @@ const Projects = () => {
       tech: ["React.js", "OpenWeather API", "CSS3"],
       links: { demo: "#", code: "#" }
     },
-    {
-      title: "Image Search Engine",
-      category: "Application",
-      image: "/image_search_engine.png",
-      description: "An intuitive image search tool that filters and displays high-quality images using Unsplash API.",
-      tech: ["JavaScript", "HTML5", "CSS3"],
-      links: { demo: "#", code: "#" }
-    },
+
     {
       title: "E-Commerce Platform",
       category: "Full Stack",

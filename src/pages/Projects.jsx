@@ -6,7 +6,7 @@ const Projects = () => {
     {
       title: "Full-Stack Restaurant Management Dashboard",
       category: "Full Stack",
-      image: "/restaurant_admin_dashboard_v2.png",
+      image: "/Restaurant.jpg",
       description: "A high-performance full-stack dashboard designed to streamline operations with real-time analytics, secure authentication, and a premium dynamic UI for actionable insights.",
       tech: ["React 19", "Tailwind CSS v4", "Framer Motion", "Recharts", "Node.js", "Express.js", "MongoDB"],
       links: { demo: "#", code: "#" }
